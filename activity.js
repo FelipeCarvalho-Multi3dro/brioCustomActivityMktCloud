@@ -21,7 +21,7 @@ connection.on('requestedSchema', function(data) {
         option.text = attr.name;
 
         selectIdTitulo.appendChild(option);
-        selectIdParcela.appendChild(option);
+        //selectIdParcela.appendChild(option);
     });
 });
 
