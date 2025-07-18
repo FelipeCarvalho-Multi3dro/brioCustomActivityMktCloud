@@ -1,7 +1,12 @@
 var connection = new Postmonger.Session();
 var payload = {};
 
-connection.trigger('ready');
+$(window).ready(onRender);
+
+function onRender() {
+    console.log('DEU BOM');
+    connection.trigger('ready');
+}
 
 connection.on('requestedSchema', function(schema) {
     // schema retorna os atributos disponíveis no Journey
