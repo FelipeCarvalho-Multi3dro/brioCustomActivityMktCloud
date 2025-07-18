@@ -49,15 +49,10 @@ connection.on('clickedNext', function(){
 
 function preencherInputs(data){
     document.querySelector('#selectIdTitulo').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idTitulo'))?.idTitulo;
-    document.querySelector('#selectIdParcela').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idParcela'))?.idTitulo;
+    document.querySelector('#selectIdParcela').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idParcela'))?.idParcela;
     document.querySelector('#timeout').value = data.arguments.execute.timeout;
     document.querySelector('#retryCount').value = data.arguments.execute.retryCount;
     document.querySelector('#retryDelay').value = data.arguments.execute.retryDelay;
-}
-
-function simularSalvamento(e){
-    updateConfig();
-    console.log('SAVE: ' + JSON.stringify(payload));
 }
 
 function validarDados(){
