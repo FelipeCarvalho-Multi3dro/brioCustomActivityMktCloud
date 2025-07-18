@@ -41,6 +41,9 @@ connection.on('clickedNext', function(){
         console.log('Payload Salvamento: ' + JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
     }
+    else{
+        connection.trigger('ready');
+    }
 });
 
 function preencherInputs(data){
