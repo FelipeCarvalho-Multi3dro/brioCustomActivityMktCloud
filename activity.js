@@ -32,7 +32,7 @@ connection.on('requestedSchema', function(data) {
 connection.on('initActivity', function(data){
     //document.querySelector('#configJson').value = JSON.stringify(data, null, 2);
     payload = data;
-
+    preencherInputs(data);
     connection.trigger('requestSchema');
 });
 
@@ -41,6 +41,14 @@ connection.on('clickedNext', function(){
     // console.log('Payload Salvamento: ' + config);
     // connection.trigger('updateActivity', config);
 });
+
+function preencherInputs(data){
+    document.querySelector('#selectIdTitulo').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idTitulo'))?.idTitulo;
+    document.querySelector('#selectIdParcela').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idParcela'))?.idTitulo;
+    document.querySelector('#timeout').value = data.arguments.execute.timeout;
+    document.querySelector('#retryCount').value = data.arguments.execute.retryCount;
+    document.querySelector('#retryDelay').value = data.arguments.execute.retryDelay;
+}
 
 function simularSalvamento(e){
     writeInArguments();
@@ -83,4 +91,14 @@ function hiddenError(){
     const errorDialog = document.querySelector('.error-dialog');
     errorDialog.innerHTML = '';
     errorDialog.classList.add('hidden');
+}
+
+function handleChangeAdvanceSettings(e){
+    showAdvanceSettings(e.target.checked);
+}
+
+function showAdvanceSettings(isShow){
+    const settings = document.querySelector('#advanceSettings');
+    if(isShow) settings.classList.remove('hidden');
+    else settings.classList.add('hidden');
 }
