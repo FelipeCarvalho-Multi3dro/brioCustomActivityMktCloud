@@ -4,21 +4,25 @@ var payload = {};
 $(window).ready(onRender);
 
 function onRender() {
-    console.log('DEU BOM');
     connection.trigger('ready');
 }
 
-connection.on('requestedSchema', function(schema) {
+connection.on('requestedSchema', function(data) {
     // schema retorna os atributos disponíveis no Journey
-    console.log('Schema', JSON.stringify(schema));
+    console.log('Schema', JSON.stringify(data));
 
     // Exemplo de construção dinâmica do dropdown
-    // schema.forEach(attr => {
-    //     const option = document.createElement('option');
-    //     option.value = `{{${attr.key}}}`;
-    //     option.text = attr.name;
-    //     document.getElementById('selectTituloCliente').appendChild(option);
-    // });
+    const selectIdTitulo = document.querySelector('#selectIdParcela');
+    const selectIdParcela = document.querySelector('#selectIdParcela');
+
+    data.schema.forEach(attr => {
+        const option = document.createElement('option');
+        option.value = `{{${attr.key}}}`;
+        option.text = attr.name;
+
+        selectIdTitulo.appendChild(option);
+        selectIdParcela.appendChild(option);
+    });
 });
 
 connection.on('initActivity', function(data){
