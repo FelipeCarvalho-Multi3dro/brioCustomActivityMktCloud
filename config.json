@@ -1,0 +1,15 @@
+{
+    "workflowApiVersion": "1.1",
+    "name": "Custom Activity - Geração de Boletos",
+    "description": "Configuração de geração de segunda via de boletos",
+    "metaData": {
+        "icon": "brio-logo.png",
+        "category": "custom"
+    },
+    "type": "REST",
+    "userInterfaces": {
+        "configInspector": {
+            "size": "medium"
+        }
+    }
+}
