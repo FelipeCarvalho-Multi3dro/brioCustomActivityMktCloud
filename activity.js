@@ -27,11 +27,12 @@ connection.on('requestedSchema', function(data) {
         selectIdTitulo.appendChild(optionTitulo);
         selectIdParcela.appendChild(optionParcela);
     });
+
+    preencherInputs(data);
 });
 
 connection.on('initActivity', function(data){
     payload = data;
-    preencherInputs(data);
     connection.trigger('requestSchema');
 });
 
