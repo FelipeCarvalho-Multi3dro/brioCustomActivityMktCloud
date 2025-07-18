@@ -16,12 +16,16 @@ connection.on('requestedSchema', function(data) {
     const selectIdParcela = document.querySelector('#selectIdParcela');
 
     data.schema.forEach(attr => {
-        const option = document.createElement('option');
-        option.value = `{{${attr.key}}}`;
-        option.text = attr.name;
+        const optionTitulo = document.createElement('option');
+        optionTitulo.value = `{{${attr.key}}}`;
+        optionTitulo.text = attr.name;
 
-        selectIdTitulo.appendChild(option);
-        //selectIdParcela.appendChild(option);
+        const optionParcela = document.createElement('option');
+        optionParcela.value = `{{${attr.key}}}`;
+        optionParcela.text = attr.name;
+
+        selectIdTitulo.appendChild(optionTitulo);
+        selectIdParcela.appendChild(optionParcela);
     });
 });
 
