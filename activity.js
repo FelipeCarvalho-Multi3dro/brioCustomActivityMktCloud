@@ -24,6 +24,8 @@ connection.on('requestedSchema', function(schema) {
 connection.on('initActivity', function(data){
     //document.querySelector('#configJson').value = JSON.stringify(data, null, 2);
     payload = data;
+
+    connection.trigger('requestSchema');
 });
 
 connection.on('clickedNext', function(){
