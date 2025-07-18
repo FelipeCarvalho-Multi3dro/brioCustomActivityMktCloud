@@ -28,7 +28,7 @@ connection.on('requestedSchema', function(data) {
         selectIdParcela.appendChild(optionParcela);
     });
 
-    preencherInputs(data);
+    preencherInputs(payload);
 });
 
 connection.on('initActivity', function(data){
