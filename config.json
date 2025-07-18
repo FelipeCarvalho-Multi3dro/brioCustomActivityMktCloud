@@ -1,15 +1,94 @@
 {
     "workflowApiVersion": "1.1",
+    "type": "REST",
     "name": "Custom Activity - Geração de Boletos",
     "description": "Configuração de geração de segunda via de boletos",
+    "editable": true,
     "metaData": {
         "icon": "brio-logo.png",
-        "category": "custom"
+        "category": "custom",
+        "isConfigured": false
     },
-    "type": "REST",
     "userInterfaces": {
         "configInspector": {
             "size": "medium"
+        }
+    },
+    "arguments": {
+        "execute": {
+            "inArguments": [
+                {
+                    "idTitulo": ""
+                },
+                {
+                    "idParcela": ""
+                }
+            ],
+            "outArguments": [
+                {
+                    "urlBoleto": ""
+                },
+                {
+                    "linhaDigitavel": ""
+                }
+            ],
+            "url": "https://some-endpoint.com/execute",
+            "timeout": 30000,
+            "retryCount": 3,
+            "retryDelay": 10000,
+            "concurrentRequests": 1
+        }
+    },
+    "configurationArguments": {
+        "save": {
+            "url": "URI/for/your/activity/save"
+        },
+        "publish": {
+            "url": "URI/for/your/activity/publish"
+        },
+        "validate": {
+            "url": "URI/for/your/activity/validate"
+        },
+        "stop": {
+            "url": "URI/for/your/activity/stop"
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "idTitulo": {
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in"
+                        }
+                    },
+                    {
+                        "idParcela": {
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in"
+                        }
+                    }
+                ],
+                "outArguments": [
+                    {
+                        "urlBoleto": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    },
+                    {
+                        "linhaDigitavel": {
+                            "dataType": "Text",
+                            "direction": "out",
+                            "access": "visible"
+                        }
+                    }
+                ]
+            }
         }
     }
 }
