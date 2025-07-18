@@ -30,16 +30,17 @@ connection.on('requestedSchema', function(data) {
 });
 
 connection.on('initActivity', function(data){
-    //document.querySelector('#configJson').value = JSON.stringify(data, null, 2);
     payload = data;
     preencherInputs(data);
     connection.trigger('requestSchema');
 });
 
 connection.on('clickedNext', function(){
-    // var config = JSON.parse(document.querySelector('#configJson').value);
-    // console.log('Payload Salvamento: ' + config);
-    // connection.trigger('updateActivity', config);
+    if(validarDados()){
+        updateConfig();
+        console.log('Payload Salvamento: ' + JSON.stringify(payload));
+        connection.trigger('updateActivity', payload);
+    }
 });
 
 function preencherInputs(data){
@@ -94,8 +95,6 @@ function validarDados(){
 }
 
 function updateConfig(){
-    if(!validarDados()) return;
-
     const idTitulo = document.querySelector('#selectIdTitulo').value;
     const idParcela = document.querySelector('#selectIdParcela').value;
     const timeout = Number(document.querySelector('#timeout').value);
@@ -106,6 +105,7 @@ function updateConfig(){
     payload.arguments.execute.timeout = timeout;
     payload.arguments.execute.retryCount = retryCount;
     payload.arguments.execute.retryDelay = retryDelay;
+    payload.metaData.isConfigured = true;
 }
 
 function showError(message){
