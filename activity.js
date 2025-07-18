@@ -51,20 +51,41 @@ function preencherInputs(data){
 }
 
 function simularSalvamento(e){
-    writeInArguments();
+    updateConfig();
     console.log('SAVE: ' + JSON.stringify(payload));
 }
 
 function validarDados(){
     const idTitulo = document.querySelector('#selectIdTitulo').value;
     const idParcela = document.querySelector('#selectIdParcela').value;
+    const timeout = Number(document.querySelector('#timeout').value);
+    const retryCount = Number(document.querySelector('#retryCount').value);
+    const retryDelay = Number(document.querySelector('#retryDelay').value);
 
     const errors = new Array();
     if(!idTitulo) errors.push('Id título');
     if(!idParcela) errors.push('Id parcela');
+    if(isNaN(timeout)) errors.push('Timeout');
+    if(isNaN(retryCount)) errors.push('Retry Count');
+    if(isNaN(retryDelay)) errors.push('Retry Delay');
 
     if(errors.length){
         showError('Os seguintes campos não foram informados: ' + errors.join(', '));
+        return false;
+    }
+
+    if(timeout < 1000 || timeout > 100000){
+        showError('Valor de timeout incorreto. O valor mínimo é 1000 e o valor máximo é 100000');
+        return false;
+    }
+
+    if(retryCount < 0 || retryCount > 5){
+        showError('Valor de retry count incorreto. O valor mínimo é 0 e o valor máximo é 5');
+        return false;
+    }
+
+    if(retryDelay < 0 || retryDelay > 10000){
+        showError('Valor de retry delay incorreto. O valor mínimo é 0 e o valor máximo é 10000');
         return false;
     }
 
@@ -72,13 +93,19 @@ function validarDados(){
     return true;
 }
 
-function writeInArguments(){
+function updateConfig(){
     if(!validarDados()) return;
 
     const idTitulo = document.querySelector('#selectIdTitulo').value;
     const idParcela = document.querySelector('#selectIdParcela').value;
+    const timeout = Number(document.querySelector('#timeout').value);
+    const retryCount = Number(document.querySelector('#retryCount').value);
+    const retryDelay = Number(document.querySelector('#retryDelay').value);
 
     payload.arguments.execute.inArguments = new Array({idTitulo}, {idParcela});
+    payload.arguments.execute.timeout = timeout;
+    payload.arguments.execute.retryCount = retryCount;
+    payload.arguments.execute.retryDelay = retryDelay;
 }
 
 function showError(message){

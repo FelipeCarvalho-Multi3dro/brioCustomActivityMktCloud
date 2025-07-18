@@ -15,10 +15,10 @@
 
         <div class="slds-box slds-m-around_medium">
             <div class="slds-form-element slds-m-bottom_medium" style="float: right;">
-                <label class="slds-checkbox_toggle slds-grid">
+                <label class="slds-checkbox_toggle slds-grid" for="toggleAdvanceSettings">
                     <span class="slds-form-element__label slds-m-bottom_none">Config. Avançadas</span>
-                        <input type="checkbox" name="checkbox-toggle-15" onchange="handleChangeAdvanceSettings(event)" checked="false"/>
-                        <span id="checkbox-toggle-15" class="slds-checkbox_faux_container" aria-live="assertive">
+                    <input type="checkbox" id="toggleAdvanceSettings" onchange="handleChangeAdvanceSettings(event)" />
+                    <span class="slds-checkbox_faux_container" aria-live="assertive">
                         <span class="slds-checkbox_faux"></span>
                     </span>
                 </label>
@@ -92,9 +92,5 @@
             <button class="slds-button slds-button_brand" onclick="simularSalvamento(event)">Salvar</button>
         </div>
 
-        <!-- <label for="selectTituloParcela">Variável do Título da Parcela:</label>
-            <select id="selectTituloParcela">
-                <option>Carregando...</option>
-            </select> -->
     </body>
 </html>
