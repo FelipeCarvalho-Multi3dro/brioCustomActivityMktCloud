@@ -32,7 +32,7 @@
                     "linhaDigitavel": ""
                 }
             ],
-            "url": "https://some-endpoint.com/execute",
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/segunda-via-boleto",
             "timeout": 10000,
             "retryCount": 2,
             "retryDelay": 5000,
@@ -41,16 +41,16 @@
     },
     "configurationArguments": {
         "save": {
-            "url": "URI/for/your/activity/save"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/save"
         },
         "publish": {
-            "url": "URI/for/your/activity/publish"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/publish"
         },
         "validate": {
-            "url": "URI/for/your/activity/validate"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/validate"
         },
         "stop": {
-            "url": "URI/for/your/activity/stop"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/stop"
         }
     },
     "schema": {
