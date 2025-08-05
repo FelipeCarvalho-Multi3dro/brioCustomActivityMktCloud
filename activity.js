@@ -7,6 +7,12 @@ function onRender() {
     connection.trigger('ready');
 }
 
+connection.on('initActivity', function(data){
+    console.log('DATA: ', JSON.stringify(data));
+    payload = data;
+    connection.trigger('requestSchema');
+});
+
 connection.on('requestedSchema', function(data) {
     // schema retorna os atributos disponíveis no Journey
     console.log('Schema', JSON.stringify(data));
@@ -31,12 +37,6 @@ connection.on('requestedSchema', function(data) {
     preencherInputs(payload);
 });
 
-connection.on('initActivity', function(data){
-    console.log('DATA: ', JSON.stringify(data));
-    payload = data;
-    connection.trigger('requestSchema');
-});
-
 connection.on('clickedNext', function(){
     if(validarDados()){
         updateConfig();
@@ -49,6 +49,7 @@ connection.on('clickedNext', function(){
 });
 
 function preencherInputs(data){
+    document.querySelector('#activity-key').value = payload.key;
     document.querySelector('#selectIdTitulo').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idTitulo'))?.idTitulo;
     document.querySelector('#selectIdParcela').value = data.arguments.execute.inArguments.find(arg => arg.hasOwnProperty('idParcela'))?.idParcela;
     document.querySelector('#timeout').value = data.arguments.execute.timeout;

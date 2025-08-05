@@ -14,17 +14,25 @@
         <div class="slds-text-heading_medium slds-m-around_medium">Configuração envio segunda via de boletos</div>
 
         <div class="slds-box slds-m-around_medium">
-            <div class="slds-form-element slds-m-bottom_medium" style="float: right;">
-                <label class="slds-checkbox_toggle slds-grid" for="toggleAdvanceSettings">
-                    <span class="slds-form-element__label slds-m-bottom_none">Config. Avançadas</span>
-                    <input type="checkbox" id="toggleAdvanceSettings" onchange="handleChangeAdvanceSettings(event)" />
-                    <span class="slds-checkbox_faux_container" aria-live="assertive">
-                        <span class="slds-checkbox_faux"></span>
-                    </span>
-                </label>
+            <div class="slds-m-bottom_medium">
+                <div class="slds-form-element" style="float: left; display: ruby">
+                    <label class="slds-form-element__label" for="activity-key">KEY</label>
+                    <div class="slds-form-element__control">
+                        <input type="text" id="activity-key" readonly="" placeholder="" class="slds-input" value="" />
+                    </div>
+                </div>
+                <div class="slds-form-element" style="float: right;">
+                    <label class="slds-checkbox_toggle slds-grid" for="toggleAdvanceSettings">
+                        <span class="slds-form-element__label slds-m-bottom_none">Config. Avançadas</span>
+                        <input type="checkbox" id="toggleAdvanceSettings" onchange="handleChangeAdvanceSettings(event)" />
+                        <span class="slds-checkbox_faux_container" aria-live="assertive">
+                            <span class="slds-checkbox_faux"></span>
+                        </span>
+                    </label>
+                </div>
             </div>
 
-            <div style="clear: both;"/>
+            <div style="clear: both;"></div>
 
             <div class="error-dialog slds-text-body_regular hidden"></div>
 
