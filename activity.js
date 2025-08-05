@@ -32,6 +32,7 @@ connection.on('requestedSchema', function(data) {
 });
 
 connection.on('initActivity', function(data){
+    console.log('DATA: ', JSON.stringify(data));
     payload = data;
     connection.trigger('requestSchema');
 });
