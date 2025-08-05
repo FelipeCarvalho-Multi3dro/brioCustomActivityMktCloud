@@ -24,11 +24,11 @@ connection.on('requestedSchema', function(data) {
     data.schema.forEach(attr => {
         const optionTitulo = document.createElement('option');
         optionTitulo.value = `{{${attr.key}}}`;
-        optionTitulo.text = attr.name;
+        optionTitulo.text = attr.name ?? attr.key;
 
         const optionParcela = document.createElement('option');
         optionParcela.value = `{{${attr.key}}}`;
-        optionParcela.text = attr.name;
+        optionParcela.text = attr.name ?? attr.key;
 
         selectIdTitulo.appendChild(optionTitulo);
         selectIdParcela.appendChild(optionParcela);
