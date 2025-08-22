@@ -32,25 +32,50 @@
                     "linhaDigitavel": ""
                 }
             ],
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/segunda-via-boleto",
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/segunda-via-boleto",
             "timeout": 10000,
             "retryCount": 2,
             "retryDelay": 5000,
-            "concurrentRequests": 1
+            "concurrentRequests": 1,
+            "useJwt": false,
+            "securityOptions": {
+                "securityType": "securityContext",
+                "securityContextKey": "AutenticacaoAPISalesforce20250822430"
+            }
         }
     },
     "configurationArguments": {
         "save": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/save"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/save",
+            "useJwt": false,
+            "securityOptions": {
+                "securityType": "securityContext",
+                "securityContextKey": "AutenticacaoAPISalesforce20250822430"
+            }
         },
         "publish": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/publish"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/publish",
+            "useJwt": false,
+            "securityOptions": {
+                "securityType": "securityContext",
+                "securityContextKey": "AutenticacaoAPISalesforce20250822430"
+            }
         },
         "validate": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/validate"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/validate",
+            "useJwt": false,
+            "securityOptions": {
+                "securityType": "securityContext",
+                "securityContextKey": "AutenticacaoAPISalesforce20250822430"
+            }
         },
         "stop": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce-sites.com/services/apexrest/mkt-cloud-custom-activity/config/stop"
+            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/stop",
+            "useJwt": false,
+            "securityOptions": {
+                "securityType": "securityContext",
+                "securityContextKey": "AutenticacaoAPISalesforce20250822430"
+            }
         }
     },
     "schema": {
