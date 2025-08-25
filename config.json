@@ -5,7 +5,7 @@
     "description": "Configuração de geração de segunda via de boletos",
     "editable": true,
     "metaData": {
-        "icon": "brio-logo.png",
+        "icon": "logo.png",
         "category": "custom",
         "isConfigured": false
     },
