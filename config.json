@@ -32,7 +32,7 @@
                     "linhaDigitavel": ""
                 }
             ],
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/segunda-via-boleto",
+            "url": "https://brioincorporadora.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/segunda-via-boleto",
             "timeout": 10000,
             "retryCount": 2,
             "retryDelay": 5000,
@@ -46,7 +46,7 @@
     },
     "configurationArguments": {
         "save": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/save",
+            "url": "https://brioincorporadora.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/save",
             "useJwt": false,
             "securityOptions": {
                 "securityType": "securityContext",
@@ -54,7 +54,7 @@
             }
         },
         "publish": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/publish",
+            "url": "https://brioincorporadora.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/publish",
             "useJwt": false,
             "securityOptions": {
                 "securityType": "securityContext",
@@ -62,7 +62,7 @@
             }
         },
         "validate": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/validate",
+            "url": "https://brioincorporadora.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/validate",
             "useJwt": false,
             "securityOptions": {
                 "securityType": "securityContext",
@@ -70,7 +70,7 @@
             }
         },
         "stop": {
-            "url": "https://brioincorporadora--parcial.sandbox.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/stop",
+            "url": "https://brioincorporadora.my.salesforce.com/services/apexrest/mkt-cloud-custom-activity/config/stop",
             "useJwt": false,
             "securityOptions": {
                 "securityType": "securityContext",
